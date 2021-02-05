@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+</head>
+<body>
+    <form action="/" method="post">
+        검색어를 입력하세요 <br/>
+        <input type= "text" name="target">
+    </form>
+    <button class ="searching"> 검색 </button>
+    <div class="result"></div>
+    <script>
+        document.querySelector('.searching').addEventListener('click', function(){
+           var inputData = document.forms[0].elements[0].value;
+           searchKeyword('http://127.0.0.1:8081/search_keyword', inputData);
+        });
+        function searchKeyword(url, data){
+            var data = {"keyword": data };
+            data = JSON.stringify(data);
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', url);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(data);
+            xhr.addEventListener('load', function(){
+                var result = JSON.parse(xhr.responseText);
+                document.querySelector('.result').innerHTML = result.result_data;
+            })
+        }
+    </script>
+</body>
+</html>
