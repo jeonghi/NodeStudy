@@ -12,7 +12,7 @@ node.js 200제 :정보문화사 자료실 http://www.infopub.co.kr/index.asp
 
 node.js 교과서 : 길벗 자료실 https://www.gilbut.co.kr/m/book/view?bookcode=BN002827&keyword=node&collection=GB_BOOK
 
-
+Node.js 웹개발로 알아보는 백엔드 자바스크립트의 이해: 인프런 강좌 https://www.inflearn.com/course/node-js-%EC%9B%B9%EA%B0%9C%EB%B0%9C/dashboard
 
 
 
