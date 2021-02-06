@@ -2,6 +2,15 @@ var express = require('express')
 var app = express()
 var cors = require('cors');
 var bodyParser = require('body-parser')
+var mysql = require('mysql')
+var connection = mysql.createConnection({
+    host : 'localhost',
+    port : 3306,
+    user : 'jeonghi' ,
+    password: 'a123456789',
+    database: 'js_test',
+})
+connection.connect();
 app.use(cors());
 const port = 8081
 app.listen(port, function(){console.log("Hello~")});
@@ -28,8 +37,18 @@ app.post('/email_post', function(req,res){
 })
 
 app.post('/ajax_send_email', function(req,res){
-    console.log(req.body.email);
-    // 얘는 받은 데이터이다. 여기서 해야할일은 응답을 주기전에 db를 확인해서 check validation을 해줘야한다. 
-    var responseData = {'result':'ok', 'email':req.body.email}
-    res.json(responseData)
+    var email = req.body.email;
+    var responseData = {};
+    var query = connection.query('select name from user where email="'+email+'"',function(err, rows){
+        if(err){ throw err;}
+        console.log(rows[0]);
+        if(rows[0]){
+            responseData.result = 'ok'
+            responseData.name = rows[0].name;
+        }else{
+            responseData.result = "none";
+            responseData.name = "";
+        }
+        res.json(responseData);
+    })
 });

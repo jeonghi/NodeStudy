@@ -9,7 +9,7 @@ Express 는 Node 웹 프레임 워크이면서 다른 프레임워크의 기본 
 > 4. 핸들링 파이프라인 중 필요한 곳에 추가적인 미들웨어 처리 요청을 추가할 수 있다.
 > 
 
-
+# require/response 기본  
 
 ```javascript
 var express = require('express'); // 모듈의 생성과
@@ -159,3 +159,86 @@ app.post('/ajax_send_email', function(req,res){
 </body>
 ```
 
+# mysql db 연동
+
+1. mysql db 다루기
+
+   `npm install mysql --save`
+
+   `mysql -u root -p`
+
+   mysql 존재하는 계정에 유저 추가
+
+   `create user 'jeonghi'@'%' identified by 'a123456789';`
+
+   유저를 특정 디비에 권한 부여
+
+   `grant all privileges on js_test.* to 'jeonghi'@'%;`
+
+2. node 에서 mysql db랑 연동
+
+```javascript
+var mysql = require('mysql')
+var connection = mysql.createConnection({
+    host : 'localhost',
+    port : 3306,
+    user : 'jeonghi' ,
+    password: 'a123456789',
+    database: 'js_test',
+})
+connection.connect();
+```
+
+3. 쿼리 디비 데이터 확인하고 JSON 으로 req 날리기
+
+```javascript
+
+app.post('/ajax_send_email', function(req,res){
+    var email = req.body.email;
+    var responseData = {};
+    var query = connection.query('select name from user where email="'+email+'"',function(err, rows){
+        if(err){ throw err;}
+        console.log(rows[0]);
+        if(rows[0]){
+            responseData.result = 'ok'
+            responseData.name = rows[0].name;
+        }else{
+            responseData.result = "none";
+            responseData.name = "";
+        }
+        res.json(responseData);
+    })
+});
+```
+
+4. 디비연동하고 웹브라우저에 JSON 받아서 보여주기
+
+   ```javascript
+       <script>
+           document.querySelector('.ajaxsend').addEventListener('click', function(){
+               var inputdata = document.forms[0].elements[0].value;
+               sendAjax('http://127.0.0.1:8081/ajax_send_email', inputdata);
+           });
+           function sendAjax(url, data){
+               var data = {'email' : data };
+               data = JSON.stringify(data);
+               var xhr = new XMLHttpRequest();
+               xhr.open('POST', url);
+               xhr.setRequestHeader('Content-Type', "application/json");
+               xhr.send(data);
+               xhr.addEventListener('load', function(){
+                   // console.log(xhr.responseText);
+                   var result = JSON.parse(xhr.responseText);
+                   var resultDiv = document.querySelector('.result')
+                   if(result.result !== "ok"){
+                       resultDiv.innerHTML = "Your email is not Found ";
+                   }
+                   else{
+                       resultDiv.innerHTML = result.name + "야 임마 너 이메일 있더라!" ;
+                   }
+               });
+           };
+       </script>
+   ```
+
+   
