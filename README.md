@@ -4,7 +4,7 @@
 
 | week | **Date** | Abstract | **Content** | Meeting | Assignment |
 |:--------:|:--------:|:--------:|:--------:|----------|----------|
-| **1** | 2. 5 ~ 2. 7 | 워밍업 능력치 테스트 : 모든 사이트의 기본. Crud 기능, 사용자 인증 처리하기 | 왕초보 : 게시글 리스트 화면 띄우기 / 초보 : db 연동 게시판 crud / 중수 : 게시판 + 로그인 , 자신의 글만 수정 삭제 가능 / 고수 : 게시판 + 로그인, 회원가입 | 오프라인 : 2.6 토요일 오후 1시 상왕십리 부근 | [바로가기](https://github.com/jeonghi/NodeStudy/tree/main/free_board) |
+| **1** | 2. 5 ~ 2. 7 | 워밍업 능력치 테스트 : 모든 사이트의 기본. Crud 기능, 사용자 인증 처리하기 | 왕초보 : 게시글 리스트 화면 띄우기 / 초보 : db 연동 게시판 crud / 중수 : 게시판 + 로그인 , 자신의 글만 수정 삭제 가능 / 고수 : 게시판 + 로그인, 회원가입 | 오프라인 : 2.6 토요일 오후 1시 상왕십리 부근 | [바로가기:arrow_upper_right:](https://github.com/jeonghi/NodeStudy/tree/main/free_board) |
 
 ### :cyclone: Reference
 

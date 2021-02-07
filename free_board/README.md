@@ -10,8 +10,7 @@
 | **고수** | 게시판 + 로그인, 회원가입 |           |
 
 ### :heart: Assignment
-
-![result](./img/result.png)
+![result](./img/board.gif)
 
 
 
