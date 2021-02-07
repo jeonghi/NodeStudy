@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../partials/head') %>
+  </head>
+  <body>
+    <%- include('../partials/nav') %>
+
+    <div class="container contact contact-index">
+      <h2>자유게시판</h2>
+      <ul class="list-group">
+        <% contents.forEach(function(content) { %>
+          <li class="list-group-item">
+            <a href="/contents/<%= content._id %>"><%= content.name %></a>
+          </li>
+        <% }) %>
+      </ul>
+    </div>
+  </body>
+</html>
