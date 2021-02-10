@@ -1,15 +1,32 @@
-.contact .contact-form,
-.contact-index ul{
-  max-width: 500px;
+body {
+  font-family: 'Open Sans', sans-serif;
 }
-.contact h2{
-  color: tomato;
+.breadcrumb-item {
+  font-size: 0.8em !important;
 }
-.contact .contact-form label,
-.contact-show label{
-  display: inline-block;
-  width: 70px;
+.ellipsis{
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.contact .contact-menu form{
-  display: inline-block;
+
+.board-table {
+  table-layout: fixed;
+}
+.board-table .author,
+.board-table .date {
+  width: 100px;
+}
+
+.post-body{
+  white-space: pre-line;
+}
+.post-info{
+  font-size: 0.8em;
+}
+
+.user-form {
+  width: 400px;
 }
