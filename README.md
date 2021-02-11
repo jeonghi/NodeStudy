@@ -4,8 +4,9 @@
 
 |   **Date**   |       Contents       |                   Meeting                    |                          Assignment                          |
 |:--------:|:--------:|:--------:|:--------:|
-| 2. 5 ~ 2. 7  | 워밍업 능력치 테스트 | 오프라인 : 2.6 토요일 오후 1시 상왕십리 부근 | [바로가기:arrow_upper_right:](https://github.com/jeonghi/NodeStudy/tree/main/free_board) |
-| 2. 8 ~ 2. 14 |  워밍업 마무리 진행  |                    온라인                    | [바로가기:arrow_upper_right:](https://github.com/jeonghi/NodeStudy/tree/main/free_board) |
+| 2. 5 ~ 2. 7  | 워밍업 능력치 테스트 | 오프라인 : 2.6 토요일 오후 1시 상왕십리 부근 | [바로가기:arrow_upper_right:](https://github.com/jeonghi/NodeStudy/tree/main/board) |
+| 2. 8 ~ 2. 10 |  워밍업 마무리 진행  |                    온라인                    | [바로가기:arrow_upper_right:](https://github.com/jeonghi/NodeStudy/tree/main/board) |
+| 2.11 ~ 2.14 | 개인 프로젝트 (쇼핑몰 기능 사전 구현) | 온라인 | [바로가기:arrow_upper_right:](https://github.com/jeonghi/NodeStudy/tree/main/shopping) |
 
 ### :cyclone: Reference
 
