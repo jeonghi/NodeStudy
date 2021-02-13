@@ -70,12 +70,62 @@ passport.deserializeUser(function(id, done){
 **local strategy**
 
 ```js
+// config/passport.js
 // var passport = require('passport')
 // var LocalStrategy = require('passport-local').Strategy
 passport.use('local-login', new LocalStrategy({
-  usernameField : 'username',
-  passwordField : 'password',
-  passReqToCallback : true}, function(){}));
+  usernameField : 'username', // 로그인 form 항목 1
+  passwordField : 'password', // 로그인 form 항목 2
+  passReqToCallback : true}, function(req, username, password, done){
+  User.findOne({username:username}).select({password:1}).exec(function(err,user){
+    if (err) return done(err);
+    if (user&&user.authenticate(password)){
+      return done(null, user); // done 을 이용해 비동기 동작을 멈출수 있다..!
+      // done 의 첫번째 인자는 무적권 에러 처리이다. 에러가 없을시에는 null을 넣어준다.
+      // 통과일경우 done(null, sessoin에 줄 정보)
+      // 통과 아닐 경우 done(null, false, {message:'fuck!'}) -> passport.auth 에서 failureRedirect 로 감
+      // done 을 하면 serialize 할 메소드를 찾아 실행함. 
+    }
+    else{
+      req.flash('username', username);
+      req.flash()
+    }
+  })
+}));
+```
+
+```js
+// routes/home.js
+// var passport = require('../config/passport')
+// post login
+router.post('/login', function(req,res,next){
+  var errors = {};
+  var isValid = true;
+  if(!req.body.username){
+    isValid = false;
+    errors.username = 'Username is Required!';
+  }
+  if(!req.body.password){
+    isValid = false;
+    errors.password = 'Password is Required!';
+  }
+  if(isValid){
+    next();
+  }else{
+    req.flash('errors', errors);
+    res.redirect('/login');
+  }
+}, passport.authenticate('local-login', {
+  successRedirect : '/posts',
+  failureRedirect : '/login', 
+  // failureFlash : true
+}));
+
+//logout
+router.get('/logout', function(req,res){
+  req.logout(); //passport 에서 제공된 logout 함수로 로그아웃
+  res.redirect('/');
+});
 ```
 
 **session**
@@ -92,6 +142,18 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 ```
+
+**미들웨어 설정하기**
+
+```js
+app.use(function(req,res,next){
+  res.locals.isAuthenticated = req.isAuthenticated();
+  res.locals.currentUser = req.user;
+  next();
+});
+```
+
+
 
 
 
