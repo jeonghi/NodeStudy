@@ -1,12 +1,17 @@
-:wave: 안녕하세요 이 레포는 지난 2021년도 2월 5일부터 시작한 풀스택 스터디의 미션 제출을 목적으로 합니다.
+:wave: 안녕하세요 이 repo는 지난 2021년도 2월 5일부터 시작한 웹 스터디의 미션 제출을 목적으로 합니다 :smile:
 
 ### :purple_heart: Schedule
 
 |   **Date**   |       Contents       |                   Meeting                    |                          Assignment                          |
 |:--------:|:--------:|:--------:|:--------:|
 | 2. 5 ~ 2. 7  | 워밍업 능력치 테스트 | 오프라인 : 2.6 토요일 오후 1시 상왕십리 부근 | [바로가기:arrow_upper_right:](https://github.com/jeonghi/NodeStudy/tree/main/board) |
-| 2. 8 ~ 2. 10 |  워밍업 마무리 진행  |                    온라인                    | [바로가기:arrow_upper_right:](https://github.com/jeonghi/NodeStudy/tree/main/board) |
-| 2.11 ~ 2.14 | 개인 프로젝트 (쇼핑몰 기능 사전 구현) | 온라인 | [바로가기:arrow_upper_right:](https://github.com/jeonghi/NodeStudy/tree/main/shopping) |
+| 2. 8 ~ 2. 14 |  워밍업 마무리 진행  |                    온라인                    | [바로가기:arrow_upper_right:](https://github.com/jeonghi/NodeStudy/tree/main/board) |
+| 2.15 ~ 2.21 | 팀프로젝트( 회원가입 구현 ) | 오프라인 : 2.15 , 2.17 오후 8시 상왕십리 부근 |                                                              |
+
+### :memo: SRS
+
+![srs](./imgs/srs.png)
+
 
 ### :cyclone: Reference
 
