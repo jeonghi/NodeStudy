@@ -6,7 +6,8 @@
 |:--------:|:--------:|:--------:|:--------:|
 | 2. 5 ~ 2. 7  | 워밍업 능력치 테스트 | 오프라인 : 2.6 토요일 오후 1시 상왕십리 부근 | [바로가기:arrow_upper_right:](https://github.com/jeonghi/NodeStudy/tree/main/board) |
 | 2. 8 ~ 2. 14 |  워밍업 마무리 진행  |                    온라인                    | [바로가기:arrow_upper_right:](https://github.com/jeonghi/NodeStudy/tree/main/board) |
-| 2.15 ~ 2.23 | 팀프로젝트( 회원가입 구현 ) | 오프라인 : 2.15 , 2.17 오후 8시 상왕십리 부근 | [바로가기:arrow_upper_right:](https://github.com/jeonghi/teampl2021_reactnode) |
+| 2.15 ~ 2.23 | 팀프로젝트( 회원가입 구현 ) | 월, 수 오후8시 상왕십리부근 오프라인 미팅 / 그 외 평일 오후 7시 30분 온라인 미팅 | [바로가기:arrow_upper_right:](https://github.com/jeonghi/teampl2021_reactnode) |
+| 2.24 ~ 2.25 | accessToken refresh, multer 기능 추가 | 월, 수 오후8시 상왕십리부근 오프라인 미팅 / 그 외 평일 오후 7시 30분 온라인 미팅 | [바로가기:arrow_upper_right:](https://github.com/jeonghi/teampl2021_reactnode) |
 
 ### :memo: SRS
 
